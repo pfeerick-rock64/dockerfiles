@@ -55,3 +55,6 @@ ENV LD_LIBRARY_PATH=/usr/aarch64-linux-gnu/lib:$LD_LIBRARY_PATH
 RUN sed -i -e \
       's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' \
       /etc/sudoers
+
+# Show what qemu architectures the container supports
+RUN update-binfmts --display
